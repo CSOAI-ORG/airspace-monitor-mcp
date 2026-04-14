@@ -1,49 +1,14 @@
 #!/usr/bin/env python3
-"""Drone airspace monitoring. — MEOK AI Labs."""
-import json, os, hashlib, random
-from datetime import datetime, timezone, timedelta
-from collections import defaultdict
+import json
 from mcp.server.fastmcp import FastMCP
-
-_usage = defaultdict(list)
-def _rl(c="anon"):
-    now = datetime.now(timezone.utc)
-    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
-    if len(_usage[c]) >= 15: return json.dumps({"error": "Limit 15/day"})
-    _usage[c].append(now); return None
-
-mcp = FastMCP("airspace-monitor", instructions="MEOK AI Labs — Drone airspace monitoring.")
-_store = []
-
-@mcp.tool()
-def check_airspace(lat: float, lon: float, alt_m: float) -> str:
-    """Drone airspace monitoring."""
-    if err := _rl(): return err
-    ts = datetime.now(timezone.utc).isoformat()
-    entry = {"id": hashlib.sha256(f"{ts}{str(locals())}".encode()).hexdigest()[:12], "timestamp": ts}
-    for k, v in locals().items():
-        if k not in ("err", "ts", "entry"): entry[k] = v
-    _store.append(entry)
-    return json.dumps(entry, indent=2)
-
-@mcp.tool()
-def detect_conflicts(drone_id: str, route: str) -> str:
-    """Process and verify."""
-    if err := _rl(): return err
-    result = {"timestamp": datetime.now(timezone.utc).isoformat(), "status": "processed"}
-    for k, v in locals().items():
-        if k not in ("err", "result"): result[k] = v
-    return json.dumps(result, indent=2)
-
-@mcp.tool()
-def get_airspace_log() -> str:
-    """Get stored entries."""
-    return json.dumps({"entries": _store[-20:], "total": len(_store)}, indent=2)
-
-@mcp.tool()
-def get_stats() -> str:
-    """Usage stats."""
-    return json.dumps({"total": len(_store), "timestamp": datetime.now(timezone.utc).isoformat()}, indent=2)
-
+mcp = FastMCP("airspace-monitor-mcp")
+@mcp.tool(name="check_airspace")
+async def check_airspace(latitude: float, longitude: float, altitude_m: float) -> str:
+    restricted = abs(latitude - 51.5) < 0.1 and abs(longitude - (-0.1)) < 0.1
+    return json.dumps({"lat": latitude, "lon": longitude, "altitude_m": altitude_m, "restricted": restricted, "clearance": not restricted and altitude_m <= 120})
+@mcp.tool(name="no_fly_zones")
+async def no_fly_zones(region: str) -> str:
+    zones = {"london": [{"lat": 51.5, "lon": -0.1, "radius_km": 5}], "heathrow": [{"lat": 51.47, "lon": -0.46, "radius_km": 2}]}
+    return json.dumps({"region": region, "zones": zones.get(region.lower(), [])})
 if __name__ == "__main__":
     mcp.run()
