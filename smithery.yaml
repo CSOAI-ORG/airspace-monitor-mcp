@@ -1,3 +1,22 @@
 name: airspace-monitor-mcp
-description: MEOK AI Labs - Uairspace monitor
+description: MEOK AI Labs - AI Governance & Compliance
 version: 1.0.0
+tools:
+- name: check_airspace
+  description: ''
+  parameters:
+  - name: latitude
+    type: number
+    required: true
+  - name: longitude
+    type: number
+    required: true
+  - name: altitude_m
+    type: number
+    required: true
+- name: no_fly_zones
+  description: ''
+  parameters:
+  - name: region
+    type: string
+    required: true

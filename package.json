@@ -1,1 +1,13 @@
-{"name":"airspace-monitor-mcp","version":"1.0.0","author":"MEOK AI Labs","license":"MIT","repository":{"type":"git","url":"https://github.com/CSOAI-ORG/airspace-monitor-mcp"}}
+{
+  "name": "airspace-monitor-mcp",
+  "version": "1.0.0",
+  "author": "MEOK AI Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/airspace-monitor-mcp"
+  },
+  "dependencies": {
+    "mcp": "^1.0.0"
+  }
+}
