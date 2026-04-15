@@ -1,0 +1,54 @@
+{
+  "name": "airspace-monitor",
+  "description": "Airspace monitoring and drone compliance. Check restricted zones, NOTAMs, flight clearance, and altitude limits. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/airspace-monitor-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "check_airspace",
+      "description": "Check if a location/altitude is safe for drone flight. Returns restrictions, nearby zones, and clearance status."
+    },
+    {
+      "name": "get_no_fly_zones",
+      "description": "Get all no-fly zones within a radius of a location."
+    },
+    {
+      "name": "get_drone_regulations",
+      "description": "Get drone flight regulations for a country (UK, US, EU, AU, CA)."
+    },
+    {
+      "name": "plan_flight",
+      "description": "Plan a drone flight path and check for restrictions along the route."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "DevOps & Infrastructure",
+    "IoT & Hardware"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
