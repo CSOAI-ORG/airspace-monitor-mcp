@@ -1,0 +1,10 @@
+{
+  "name": "airspace-monitor-mcp",
+  "description": "MEOK AI Labs \u2014 airspace-monitor-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/airspace-monitor-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}

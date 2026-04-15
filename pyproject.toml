@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/airspace-monitor-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+airspace_monitor_mcp = "server:main"
