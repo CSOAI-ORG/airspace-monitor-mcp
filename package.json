@@ -9,5 +9,6 @@
   },
   "dependencies": {
     "mcp": "^1.0.0"
-  }
+  },
+  "description": "Airspace Monitor MCP server. Tools: check airspace, get no fly zones, get drone regulations. Built by MEOK AI Labs."
 }

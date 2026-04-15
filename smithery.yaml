@@ -1,6 +1,6 @@
 name: airspace-monitor-mcp
-description: Airspace monitoring and drone compliance. Check restricted zones, NOTAMs,
-  flight clearance, and alti
+description: 'Airspace Monitor MCP server. Tools: check airspace, get no fly zones,
+  get drone regulations. Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: check_airspace
