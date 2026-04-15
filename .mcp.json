@@ -1,11 +1,11 @@
 {
   "name": "airspace-monitor-mcp",
-  "description": "MEOK AI Labs - AI Governance & Compliance",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Airspace monitoring and drone compliance. Check restricted zones, NOTAMs, flight clearance, and alti",
   "version": "1.0.0",
   "tools": [
     {
       "name": "check_airspace",
-      "description": "",
+      "description": "Check if a location/altitude is safe for drone flight. Returns restrictions, nearby zones, and clearance status.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -21,23 +21,72 @@
         },
         "required": [
           "latitude",
-          "longitude",
-          "altitude_m"
+          "longitude"
         ]
       }
     },
     {
-      "name": "no_fly_zones",
-      "description": "",
+      "name": "get_no_fly_zones",
+      "description": "Get all no-fly zones within a radius of a location.",
       "parameters": {
         "type": "object",
         "properties": {
-          "region": {
-            "type": "string"
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "radius_km": {
+            "type": "number"
           }
         },
         "required": [
-          "region"
+          "latitude",
+          "longitude"
+        ]
+      }
+    },
+    {
+      "name": "get_drone_regulations",
+      "description": "Get drone flight regulations for a country (UK, US, EU, AU, CA).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "plan_flight",
+      "description": "Plan a drone flight path and check for restrictions along the route.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_lat": {
+            "type": "number"
+          },
+          "start_lon": {
+            "type": "number"
+          },
+          "end_lat": {
+            "type": "number"
+          },
+          "end_lon": {
+            "type": "number"
+          },
+          "altitude_m": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "start_lat",
+          "start_lon",
+          "end_lat",
+          "end_lon"
         ]
       }
     }

@@ -1,9 +1,11 @@
 name: airspace-monitor-mcp
-description: MEOK AI Labs - AI Governance & Compliance
+description: Airspace monitoring and drone compliance. Check restricted zones, NOTAMs,
+  flight clearance, and alti
 version: 1.0.0
 tools:
 - name: check_airspace
-  description: ''
+  description: Check if a location/altitude is safe for drone flight. Returns restrictions,
+    nearby zones, and clearance status.
   parameters:
   - name: latitude
     type: number
@@ -13,10 +15,40 @@ tools:
     required: true
   - name: altitude_m
     type: number
-    required: true
-- name: no_fly_zones
-  description: ''
+    required: false
+- name: get_no_fly_zones
+  description: Get all no-fly zones within a radius of a location.
   parameters:
-  - name: region
-    type: string
+  - name: latitude
+    type: number
     required: true
+  - name: longitude
+    type: number
+    required: true
+  - name: radius_km
+    type: number
+    required: false
+- name: get_drone_regulations
+  description: Get drone flight regulations for a country (UK, US, EU, AU, CA).
+  parameters:
+  - name: country
+    type: string
+    required: false
+- name: plan_flight
+  description: Plan a drone flight path and check for restrictions along the route.
+  parameters:
+  - name: start_lat
+    type: number
+    required: true
+  - name: start_lon
+    type: number
+    required: true
+  - name: end_lat
+    type: number
+    required: true
+  - name: end_lon
+    type: number
+    required: true
+  - name: altitude_m
+    type: number
+    required: false
