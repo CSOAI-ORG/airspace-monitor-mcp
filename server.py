@@ -54,7 +54,23 @@ def _haversine(lat1, lon1, lat2, lon2):
 
 @mcp.tool()
 def check_airspace(latitude: float, longitude: float, altitude_m: float = 120, api_key: str = "") -> str:
-    """Check if a location/altitude is safe for drone flight. Returns restrictions, nearby zones, and clearance status."""
+    """Check if a location/altitude is safe for drone flight. Returns restrictions, nearby zones, and clearance status.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -90,7 +106,23 @@ def check_airspace(latitude: float, longitude: float, altitude_m: float = 120, a
 
 @mcp.tool()
 def get_no_fly_zones(latitude: float, longitude: float, radius_km: float = 50, api_key: str = "") -> str:
-    """Get all no-fly zones within a radius of a location."""
+    """Get all no-fly zones within a radius of a location.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -107,7 +139,23 @@ def get_no_fly_zones(latitude: float, longitude: float, radius_km: float = 50, a
 
 @mcp.tool()
 def get_drone_regulations(country: str = "UK", api_key: str = "") -> str:
-    """Get drone flight regulations for a country (UK, US, EU, AU, CA)."""
+    """Get drone flight regulations for a country (UK, US, EU, AU, CA).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -121,7 +169,23 @@ def get_drone_regulations(country: str = "UK", api_key: str = "") -> str:
 
 @mcp.tool()
 def plan_flight(start_lat: float, start_lon: float, end_lat: float, end_lon: float, altitude_m: float = 100, api_key: str = "") -> str:
-    """Plan a drone flight path and check for restrictions along the route."""
+    """Plan a drone flight path and check for restrictions along the route.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
