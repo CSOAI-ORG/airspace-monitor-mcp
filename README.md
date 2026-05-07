@@ -1,3 +1,5 @@
+[![airspace-monitor-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/airspace-monitor-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/airspace-monitor-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/airspace-monitor-mcp)](https://github.com/CSOAI-ORG/airspace-monitor-mcp/stargazers)
