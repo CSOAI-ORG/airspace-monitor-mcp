@@ -70,6 +70,13 @@ def check_airspace(latitude: float, longitude: float, altitude_m: float = 120, a
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        latitude (float): The latitude to analyze or process.
+        longitude (float): The longitude to analyze or process.
+        altitude_m (float): The altitude m to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -136,6 +143,13 @@ def get_no_fly_zones(latitude: float, longitude: float, radius_km: float = 50, a
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        latitude (float): The latitude to analyze or process.
+        longitude (float): The longitude to analyze or process.
+        radius_km (float): The radius km to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -183,6 +197,11 @@ def get_drone_regulations(country: str = "UK", api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        country (str): The country to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -227,6 +246,15 @@ def plan_flight(start_lat: float, start_lon: float, end_lat: float, end_lon: flo
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        start_lat (float): The start lat to analyze or process.
+        start_lon (float): The start lon to analyze or process.
+        end_lat (float): The end lat to analyze or process.
+        end_lon (float): The end lon to analyze or process.
+        altitude_m (float): The altitude m to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
