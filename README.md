@@ -1,3 +1,7 @@
+[![airspace-monitor-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/airspace-monitor-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/airspace-monitor-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/airspace-monitor-mcp)](https://pypi.org/project/airspace-monitor-mcp/)
+
 [![airspace-monitor-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/airspace-monitor-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/airspace-monitor-mcp)
 
 <div align="center">
