@@ -1,0 +1,33 @@
+# airspace-monitor-mcp
+# **MCP server for airspace monitor mcp operations**
+
+## Install
+```bash
+pip install airspace-monitor-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `check_airspace`
+Check if a location/altitude is safe for drone flight. Returns restrictions, nearby zones, and clearance status.
+
+### `get_no_fly_zones`
+Get all no-fly zones within a radius of a location.
+
+### `get_drone_regulations`
+Get drone flight regulations for a country (UK, US, EU, AU, CA).
+
+### `plan_flight`
+Plan a drone flight path and check for restrictions along the route.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

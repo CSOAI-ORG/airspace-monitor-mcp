@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Airspace Monitor MCP — MEOK AI Labs. Drone/aircraft airspace compliance, no-fly zones, NOTAM alerts."""
+"""
+Airspace Monitor MCP — MEOK AI Labs. Drone/aircraft airspace compliance, no-fly zones, NOTAM alerts."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json, math
@@ -94,7 +94,7 @@ def check_airspace(latitude: float, longitude: float, altitude_m: float = 120, a
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     violations = []
@@ -167,7 +167,7 @@ def get_no_fly_zones(latitude: float, longitude: float, radius_km: float = 50, a
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     zones = []
@@ -219,7 +219,7 @@ def get_drone_regulations(country: str = "UK", api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     code = country.upper().strip()
@@ -272,7 +272,7 @@ def plan_flight(start_lat: float, start_lon: float, end_lat: float, end_lon: flo
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     distance = _haversine(start_lat, start_lon, end_lat, end_lon)
@@ -299,5 +299,8 @@ def plan_flight(start_lat: float, start_lon: float, end_lat: float, end_lon: flo
     }
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

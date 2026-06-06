@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "airspace-monitor-mcp"
-version = "1.0.4"
+version = "1.0.6"
 readme = "README.md"
 description = "Airspace Monitor MCP server. Tools: check airspace, get no fly zones, get drone regulations. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/airspace-monitor-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 airspace_monitor_mcp = "server:main"

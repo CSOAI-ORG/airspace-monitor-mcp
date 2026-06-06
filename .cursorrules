@@ -1,0 +1,9 @@
+# airspace-monitor-mcp - Auto-trigger Rules
+
+When the user asks about airspace monitor, use airspace-monitor-mcp tools: check_airspace, get_no_fly_zones, get_drone_regulations, plan_flight
+
+**MCP server for airspace monitor mcp operations**
+
+Install: `pip install airspace-monitor-mcp`
+
+By MEOK AI Labs — MIT licensed.

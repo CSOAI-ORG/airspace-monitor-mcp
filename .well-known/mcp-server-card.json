@@ -1,0 +1,25 @@
+{
+  "name": "airspace-monitor-mcp",
+  "title": "Airspace Monitor Mcp",
+  "description": "Airspace Monitor MCP server. Tools: check airspace, get no fly zones, get drone regulations. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "check_airspace"
+    },
+    {
+      "name": "get_no_fly_zones"
+    },
+    {
+      "name": "get_drone_regulations"
+    },
+    {
+      "name": "plan_flight"
+    }
+  ]
+}
