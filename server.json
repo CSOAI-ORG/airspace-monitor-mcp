@@ -4,9 +4,9 @@
   "version": "1.0.9",
   "description": "Airspace Monitor MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/airspace-monitor-mcp",
-    "source": "https://github.com/CSOAI-ORG/airspace-monitor-mcp"
+    "source": "github",
+    "id": "1210302837"
   },
   "packages": [
     {
