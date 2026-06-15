@@ -1,4 +1,4 @@
-<!-- mcp-name: CSOAI-ORG/airspace-monitor-mcp -->
+<!-- mcp-name: io.github.CSOAI-ORG/airspace-monitor-mcp -->
 [![MCP Scorecard: 86/100](https://img.shields.io/badge/proofof.ai-86%2F100-5b21b6)](https://proofof.ai/scorecard/airspace-monitor-mcp.html)
 
 # Airspace Monitor MCP
